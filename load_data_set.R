@@ -1,3 +1,5 @@
+# Check whether the file to be downloaded already exists and if not, download it
+
 destFile <- "pollutant.zip"
 file1 <- "Source_Classification_Code.rds"
 file2 <- "summarySCC_PM25.rds"
@@ -22,3 +24,5 @@ if(!file.exists(file1)|!file.exists(file2)) {
 
 NEI <- readRDS("summarySCC_PM25.rds")
 SCC <- readRDS("Source_Classification_Code.rds")
+
+
