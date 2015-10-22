@@ -1,1 +1,1 @@
-Coursera - Exploratory Data Analysis - Class Project 2
+# Coursera - EDA - Class Project 2
