@@ -14,7 +14,7 @@ plot1data <- NEI %>%
 plot1data <- as.data.frame(plot1data)
 
 # Store values of emission from 1999 to variables
-# Those values are base labels for the chart
+# Those values are base levels for the chart
 
 baltimoreBase <- plot1data$Emissions[plot1data$year == 1999 & plot1data$fips == "24510"]
 LABase <- plot1data$Emissions[plot1data$year == 1999 & plot1data$fips == "06037"]
@@ -24,7 +24,6 @@ LABase <- plot1data$Emissions[plot1data$year == 1999 & plot1data$fips == "06037"
 plot1data$Emissions[plot1data$fips == "24510"] <- (plot1data$Emissions[plot1data$fips == "24510"]/baltimoreBase)*100
 plot1data$Emissions[plot1data$fips == "06037"] <- (plot1data$Emissions[plot1data$fips == "06037"]/LABase)*100
 
-# plot1data <- plot1data %>% group_by(year, fips) %>% summarise(Emissions = sum(Emissions)) 
 plot1data <- xtabs(Emissions ~ fips + year, data = plot1data)
 
 png(filename = "plot6.png")
